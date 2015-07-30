@@ -52,43 +52,32 @@ class ViewController: UIViewController {
         }
     }
     
-    private var operandsStack: [Double] = [Double]()
-
-    @IBAction func enter() {
-        print("Stack: \(operandsStack)")
-        operandsStack.append(displayInDouble)
+    private let brain = CalculatorBrain()
+    
+    private func evaluate() {
+        if let value = brain.evaluate() {
+            displayInDouble = value
+        } else {
+            displayInDouble = Double.NaN
+        }
+    }
+    
+    @IBAction
+    private func enter() {
+        brain.pushOperand(displayInDouble)
+        print("Stack: \(brain.toString)")
         userInMiddleOfTyping = false
     }
 
     @IBAction func operation(sender: UIButton) {
-        if operandsStack.count < 2 {
-            return
+        if userInMiddleOfTyping {
+            enter()
         }
-        let left = operandsStack[operandsStack.count - 1]
-        let right = operandsStack[operandsStack.count - 2]
-        operandsStack.removeRange(Range(start: operandsStack.count - 2, end: operandsStack.count))
         
-        let result: Double
         if let operation = sender.currentTitle {
-            switch operation {
-                case "+":
-                    result = left + right
-                case "−":
-                    result = left - right
-                case "×":
-                    result = left * right
-                case "÷":
-                    result = left / right
-                default:
-                    return
-            }
-        } else {
-            return
+            brain.performOperation(operation)
+            evaluate()
         }
-        
-        print("Stack: \(operandsStack)")
-        operandsStack.append(result)
-        displayInDouble = result
     }
 }
 
