@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     private let formatter = NSNumberFormatter()
     
-    private var displayInDouble: Double {
+    private var displayInDouble: Double? {
         get {
             if let text = display.text,
                 number = formatter.numberFromString(text)
@@ -48,24 +48,21 @@ class ViewController: UIViewController {
             }
         }
         set (value) {
-            display.text = "\(value)"
+            let print: Double
+            if let value = value {
+                print = value
+            } else {
+                print = Double.NaN
+            }
+            display.text = "\(print)"
         }
     }
     
     private let brain = CalculatorBrain()
     
-    private func evaluate() {
-        if let value = brain.evaluate() {
-            displayInDouble = value
-        } else {
-            displayInDouble = Double.NaN
-        }
-    }
-    
     @IBAction
     private func enter() {
-        brain.pushOperand(displayInDouble)
-        print("Stack: \(brain.toString)")
+        displayInDouble = brain.pushOperand(displayInDouble!)
         userInMiddleOfTyping = false
     }
 
@@ -75,8 +72,8 @@ class ViewController: UIViewController {
         }
         
         if let operation = sender.currentTitle {
-            brain.performOperation(operation)
-            evaluate()
+            print("Operation: \(operation)")
+            displayInDouble = brain.performOperation(operation)
         }
     }
 }

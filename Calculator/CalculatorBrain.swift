@@ -10,24 +10,38 @@ import Foundation
 
 public class CalculatorBrain
 {
-    private enum Operation {
+    private enum Operation: CustomStringConvertible {
         case Operand(value: Double)
         case UnaryOperation(operation: String, calculation: (Double) -> Double)
         case BinaryOperation(operation: String, calculation: (Double, Double) -> Double)
+        
+        var description : String {
+            switch self {
+            case .Operand(let value):
+                return "\(value)"
+            case .UnaryOperation(let operation, _):
+                return "\(operation)"
+            case .BinaryOperation(let operation, _):
+                return "\(operation)"
+            }
+        }
     }
     
     private static func buildKnownOprations() -> [String:Operation] {
         var operations = [String:Operation]()
+        func addOperation(o: Operation) {
+            operations[o.description] = o
+        }
         
-        operations["+"] = Operation.BinaryOperation(operation: "+", calculation: { $0 + $1 })
-        operations["-"] = Operation.BinaryOperation(operation: "-", calculation: { $1 - $0 })
-        operations["×"] = Operation.BinaryOperation(operation: "×", calculation: { $0 * $1 })
-        operations["÷"] = Operation.BinaryOperation(operation: "÷", calculation: { $1 / $0 })
+        addOperation(.BinaryOperation(operation: "+", calculation: { $0 + $1 }))
+        addOperation(.BinaryOperation(operation: "-", calculation: { $1 - $0 }))
+        addOperation(.BinaryOperation(operation: "×", calculation: { $0 * $1 }))
+        addOperation(.BinaryOperation(operation: "÷", calculation: { $1 / $0 }))
         
-        operations["x²"] = Operation.UnaryOperation(operation: "x²", calculation: { $0 * $0 })
-        operations["sin"] = Operation.UnaryOperation(operation: "sin", calculation: sin)
-        operations["cos"] = Operation.UnaryOperation(operation: "con", calculation: cos)
-        operations["√"] = Operation.UnaryOperation(operation: "√", calculation: sqrt)
+        addOperation(.UnaryOperation(operation: "x²", calculation: { $0 * $0 }))
+        addOperation(.UnaryOperation(operation: "sin", calculation: sin))
+        addOperation(.UnaryOperation(operation: "con", calculation: cos))
+        addOperation(.UnaryOperation(operation: "√", calculation: sqrt))
         return operations
     }
     
@@ -36,14 +50,16 @@ public class CalculatorBrain
     
     private var stack = [Operation]()
     
-    public func pushOperand(value: Double) {
+    public func pushOperand(value: Double) -> Double? {
         stack.append(.Operand(value: value))
+        return evaluate()
     }
     
-    public func performOperation(symbol: String) {
+    public func performOperation(symbol: String) -> Double? {
         if let operation = CalculatorBrain.knownOperations[symbol] {
             stack.append(operation)
         }
+        return evaluate()
     }
     
     private func evaluate(var position: Int) -> (Int,Double?) {
@@ -76,7 +92,9 @@ public class CalculatorBrain
     }
     
     public func evaluate() -> Double? {
-        return evaluate(stack.count - 1).1
+        let (_, value) = evaluate(stack.count - 1)
+        print("\(stack) = \(value)")
+        return value
     }
     
     public var toString: String {
