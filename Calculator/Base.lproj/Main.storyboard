@@ -26,17 +26,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9UR-eG-Z0h">
                                 <rect key="frame" x="20" y="8" width="560" height="584"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-Zi-FKK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="59" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-Zi-FKK">
                                         <rect key="frame" x="8" y="0.0" width="544" height="59"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZL-8F-Jwp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="38.5" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZL-8F-Jwp">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="38.5"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-lK-fNb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="20.5" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-lK-fNb">
                                                 <rect key="frame" x="0.0" y="38.5" width="544" height="20.5"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -52,8 +52,47 @@
                                             <constraint firstAttribute="trailing" secondItem="4fX-lK-fNb" secondAttribute="trailing" id="zB4-GP-Caj"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Co7-fA-N5J">
-                                        <rect key="frame" x="8" y="100" width="544" height="64"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="44" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-dH-Yci">
+                                        <rect key="frame" x="8" y="86" width="544" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-Pp-Zkc">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrz-nN-SSp">
+                                                <rect key="frame" x="120" y="0.0" width="64" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-AP-X3k">
+                                                <rect key="frame" x="240" y="0.0" width="64" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-01-W2I">
+                                                <rect key="frame" x="360" y="0.0" width="64" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="M"/>
+                                                <connections>
+                                                    <action selector="addMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqa-H1-QyO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va7-ps-8es">
+                                                <rect key="frame" x="480" y="0.0" width="64" height="44"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="M←"/>
+                                                <connections>
+                                                    <action selector="setMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdD-an-SJK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Co7-fA-N5J">
+                                        <rect key="frame" x="8" y="156.5" width="544" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JD-9z-U59">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -77,9 +116,6 @@
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <connections>
-                                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mul-y6-WGU"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOn-gn-wqF">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
@@ -102,8 +138,8 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-10-bSs">
-                                        <rect key="frame" x="8" y="205" width="544" height="64"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-10-bSs">
+                                        <rect key="frame" x="8" y="247.5" width="544" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-so-WR4">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -153,8 +189,8 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="F8A-m8-Cvk">
-                                        <rect key="frame" x="8" y="310" width="544" height="64"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="F8A-m8-Cvk">
+                                        <rect key="frame" x="8" y="338.5" width="544" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2k-pe-NgZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -204,8 +240,8 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GDr-P2-cIw">
-                                        <rect key="frame" x="8" y="415" width="544" height="64"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GDr-P2-cIw">
+                                        <rect key="frame" x="8" y="429" width="544" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-Oh-xLd">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -255,7 +291,7 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-x0-k1U">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-x0-k1U">
                                         <rect key="frame" x="8" y="520" width="544" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7I-7L-jGY">
@@ -311,7 +347,9 @@
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="Co7-fA-N5J" secondAttribute="trailing" constant="8" id="1b3-28-2Lr"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="F8A-m8-Cvk" secondAttribute="trailing" constant="8" id="23w-av-YQf"/>
+                                    <constraint firstItem="2vW-dH-Yci" firstAttribute="leading" secondItem="9UR-eG-Z0h" secondAttribute="leading" constant="8" id="81R-Uv-dou"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="FYa-x0-k1U" secondAttribute="trailing" constant="8" id="AXs-Jy-80u"/>
+                                    <constraint firstAttribute="trailing" secondItem="2vW-dH-Yci" secondAttribute="trailing" constant="8" id="CfF-wl-FYf"/>
                                     <constraint firstItem="GDr-P2-cIw" firstAttribute="leading" secondItem="9UR-eG-Z0h" secondAttribute="leadingMargin" constant="8" id="DKJ-gX-Cqg"/>
                                     <constraint firstItem="wzl-10-bSs" firstAttribute="leading" secondItem="9UR-eG-Z0h" secondAttribute="leadingMargin" constant="8" id="EqF-UO-BGr"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="wzl-10-bSs" secondAttribute="trailing" constant="8" id="HHi-QQ-zgr"/>

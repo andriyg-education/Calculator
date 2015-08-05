@@ -81,13 +81,22 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func setMemory(sender: UIButton) {
+        brain.variablesValues["M"] = displayInDouble
+        display = brain.evaluate()
+        userInMiddleOfTyping = false
+    }
+    
+    @IBAction func addMemory(sender: UIButton) {
+        display = brain.pushOperand("M")
+    }
+    
     private var userInMiddleOfTyping: Bool = false
     
     private let formatter = NSNumberFormatter()
     
     private var displayInDouble: Double {
-        if let text = displayLabel.text,
-            number = formatter.numberFromString(text)
+        if let number = formatter.numberFromString(displayText)
         {
             return number.doubleValue
         } else {
@@ -113,7 +122,11 @@ class ViewController: UIViewController {
     
     private var displayText: String {
         get {
-            return displayLabel.text ?? ""
+            var text = displayLabel.text ?? ""
+            if text.hasSuffix("=") {
+                text = text.substringToIndex(text.endIndex.predecessor())
+            }
+            return text
         }
         set (value) {
             displayLabel.text = value
@@ -124,9 +137,6 @@ class ViewController: UIViewController {
     
     @IBAction
     private func enter() {
-        if displayText.hasSuffix("=") {
-            displayText.removeAtIndex(displayText.endIndex.predecessor())
-        }
         display = brain.pushOperand(displayInDouble)
         userInMiddleOfTyping = false
     }

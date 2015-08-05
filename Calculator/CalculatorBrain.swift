@@ -20,13 +20,16 @@ public class CalculatorBrain
         }
     }
     
-    public static let EMPTY_RESULT = CalculatorBrain.Result(result: 0, calculation: "")
+    public static let EMPTY_RESULT = CalculatorBrain.Result(result: 0, calculation: " ")
+    
+    public var variablesValues = [String:Double]()
     
     private enum Operation: CustomStringConvertible {
         case Operand(value: Double)
         case UnaryOperation(operation: String, calculation: (Double) -> Double)
         case BinaryOperation(operation: String, calculation: (Double, Double) -> Double)
         case Constant(symbol: String, value: Double)
+        case Variable(String)
         
         var description : String {
             switch self {
@@ -37,6 +40,8 @@ public class CalculatorBrain
             case .BinaryOperation(let operation, _):
                 return "\(operation)"
             case .Constant(let symbol, _):
+                return "\(symbol)"
+            case .Variable(let symbol):
                 return "\(symbol)"
             }
         }
@@ -74,6 +79,11 @@ public class CalculatorBrain
         return evaluate()
     }
 
+    public func pushOperand(symbol: String) -> Result {
+        stack.append(.Variable(symbol))
+        return evaluate()
+    }
+
     public func performOperation(symbol: String) -> Result {
         if let operation = CalculatorBrain.knownOperations[symbol] {
             stack.append(operation)
@@ -81,49 +91,111 @@ public class CalculatorBrain
         return evaluate()
     }
     
-    private func evaluate(var position: Int) -> (Int,String,Double?) {
+    private func evaluate(var position: Int) -> (Int, Double?) {
         if position < 0  || position > stack.count {
-            return (position, "", 0)
+            return (position, nil)
         }
         let operation = stack[position]
         position--
         switch operation {
             
         case .Operand(let value):
-            return (position, "\(value)", value)
+            return (position, value)
             
-        case .UnaryOperation(let symbol, let calculation):
-            let (postion, calc, value) = evaluate(position)
-            let currentCalc = "\(symbol)(\(calc))"
+        case .UnaryOperation(_, let calculation):
+            let (postion, value) = evaluate(position)
             if let value = value {
-                return (postion, currentCalc, calculation(value))
+                return (postion, calculation(value))
             } else {
-                return (postion, currentCalc, nil)
+                return (postion, nil)
             }
             
-        case .BinaryOperation(let symbol, let calculation):
-            let (position, leftCalc, left) = evaluate(position)
+        case .BinaryOperation(_, let calculation):
+            let (position, left) = evaluate(position)
             if let left = left {
-                let (position, rightCalc, right) = evaluate(position)
-                let currentCalc = "\(leftCalc) \(symbol) \(rightCalc)"
+                let (position, right) = evaluate(position)
                 if let right = right {
-                    return (position, currentCalc, calculation(left, right))
+                    return (position, calculation(left, right))
                 } else {
-                    return (position, currentCalc, nil)
+                    return (position, nil)
                 }
             } else {
-                return (position, "\(leftCalc) \(symbol) ???", nil)
+                return (position, nil)
             }
             
-        case .Constant(let symbol, let value):
-            return (position, symbol, value)
-        }        
+        case .Constant(_, let value):
+            return (position, value)
+            
+        case .Variable(let symbol):
+            return (position, variablesValues[symbol])
+        }
+    }
+    
+    private func describe(var position: Int) -> (String?, Int, String) {
+        if position < 0  || position >= stack.count {
+            return (nil, position, "?")
+        }
+        let operation = stack[position]
+        position--
+        let description: String
+        let bracesCategory: String?
+        switch operation {
+            
+        case .Operand(let value):
+            description = "\(value)"
+            bracesCategory = nil
+            
+        case .UnaryOperation(let symbol, _):
+            let (_, position1, innerDescr) = describe(position)
+            description = "\(symbol)(\(innerDescr))"
+            bracesCategory = nil
+            position = position1
+            
+        case .BinaryOperation(let symbol, _):
+            var (leftBraces, position1, leftDescr) = describe(position)
+            var (rightBraces, position2, rightDescr) = describe(position1)
+            bracesCategory = symbol
+            
+            if leftBraces != nil && bracesCategory != leftBraces {
+                leftDescr = "(\(leftDescr))"
+            }
+            if rightBraces != nil && bracesCategory != rightBraces {
+                rightDescr = "(\(rightDescr))"
+            }
+            description = "\(rightDescr) \(symbol) \(leftDescr)"
+            position = position2
+            
+        case .Constant(let symbol, _):
+            description = symbol
+            bracesCategory = nil
+            
+        case .Variable(let symbol):
+            description = symbol
+            bracesCategory = nil
+        }
+
+        return (bracesCategory, position, description)
     }
     
     public func evaluate() -> Result {
-        let (_, calculation, value) = evaluate(stack.count - 1)
-        print("\(calculation) = \(value)")
-        return Result(result: value, calculation: calculation)
+        if stack.isEmpty {
+            return CalculatorBrain.EMPTY_RESULT
+        }
+        let (_, value) = evaluate(stack.count - 1)
+        var position = stack.count - 1
+        var description: String = ""
+        repeat {
+            let step: String
+            (_, position, step) = describe(position)
+            if description == "" {
+                description = step
+            } else {
+                description += "; \(step)"
+            }
+            
+        } while position >= 0
+        print("\(description) = \(value); \(variablesValues)")
+        return Result(result: value, calculation: description)
     }
     
     public var toString: String {
@@ -134,6 +206,7 @@ public class CalculatorBrain
     
     public func clean() -> Result {
         stack = []
+        variablesValues = [:]
         return CalculatorBrain.EMPTY_RESULT
     }
     
