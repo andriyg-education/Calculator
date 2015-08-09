@@ -14,21 +14,21 @@ public class CalculatorBrain
         public let result: Double?
         public let calculation: String
         
-        private init(result: Double?, calculation: String) {
+        private init(_ result: Double?, _ calculation: String) {
             self.result = result
             self.calculation = calculation
         }
     }
     
-    public static let EMPTY_RESULT = CalculatorBrain.Result(result: 0, calculation: " ")
+    public static let EMPTY_RESULT = CalculatorBrain.Result(0, " ")
     
     public var variablesValues = [String:Double]()
     
     private enum Operation: CustomStringConvertible {
-        case Operand(value: Double)
-        case UnaryOperation(operation: String, calculation: (Double) -> Double)
-        case BinaryOperation(operation: String, calculation: (Double, Double) -> Double)
-        case Constant(symbol: String, value: Double)
+        case Operand(Double)
+        case UnaryOperation(String, (Double) -> Double)
+        case BinaryOperation(String, (Double, Double) -> Double)
+        case Constant(String, Double)
         case Variable(String)
         
         var description : String {
@@ -53,29 +53,50 @@ public class CalculatorBrain
             operations[o.description] = o
         }
         
-        addOperation(.BinaryOperation(operation: "+", calculation: { $0 + $1 }))
-        addOperation(.BinaryOperation(operation: "-", calculation: { $1 - $0 }))
-        addOperation(.BinaryOperation(operation: "×", calculation: { $0 * $1 }))
-        addOperation(.BinaryOperation(operation: "÷", calculation: { $1 / $0 }))
+        addOperation(.BinaryOperation("+", { $0 + $1 }))
+        addOperation(.BinaryOperation("-", { $1 - $0 }))
+        addOperation(.BinaryOperation("×", { $0 * $1 }))
+        addOperation(.BinaryOperation("÷", { $1 / $0 }))
         
-        addOperation(.UnaryOperation(operation: "±", calculation: { -$0 }))
-        addOperation(.UnaryOperation(operation: "x²", calculation: { $0 * $0 }))
-        addOperation(.UnaryOperation(operation: "sin", calculation: sin))
-        addOperation(.UnaryOperation(operation: "cos", calculation: cos))
-        addOperation(.UnaryOperation(operation: "√", calculation: sqrt))
+        addOperation(.UnaryOperation("±", { -$0 }))
+        addOperation(.UnaryOperation("x²", { $0 * $0 }))
+        addOperation(.UnaryOperation("sin", sin))
+        addOperation(.UnaryOperation("cos", cos))
+        addOperation(.UnaryOperation("√", sqrt))
         
-        addOperation(.Constant(symbol: "π", value: M_PI))
+        addOperation(.Constant("π", M_PI))
         
         return operations
     }
     
     private static let knownOperations = CalculatorBrain.buildKnownOprations()
 
+    private let formatter = NSNumberFormatter()
     
     private var stack = [Operation]()
     
+    public var program: AnyObject { // Have to be a property List
+        get {
+            return stack.map { $0.description }
+        }
+        set (value) {
+            if let value = value as? [String] {
+                stack = value.map {
+                    if let operation = CalculatorBrain.knownOperations[$0] {
+                        return operation
+                    } else if let operand = formatter.numberFromString($0) {
+                        return Operation.Operand(operand.doubleValue)
+                    } else {
+                        return Operation.Variable($0)
+                    }
+                }
+            }
+        }
+        
+    }
+    
     public func pushOperand(value: Double) -> Result {
-        stack.append(.Operand(value: value))
+        stack.append(.Operand(value))
         return evaluate()
     }
 
@@ -195,7 +216,7 @@ public class CalculatorBrain
             
         } while position >= 0
         print("\(description) = \(value); \(variablesValues)")
-        return Result(result: value, calculation: description)
+        return Result(value, description)
     }
     
     public var toString: String {
