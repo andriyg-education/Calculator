@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A234d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -55,22 +55,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="44" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-dH-Yci">
                                         <rect key="frame" x="8" y="86" width="544" height="44"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-Pp-Zkc">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-Pp-Zkc">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrz-nN-SSp">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrz-nN-SSp">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-AP-X3k">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-AP-X3k">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-01-W2I">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-01-W2I">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -79,7 +79,7 @@
                                                     <action selector="addMemory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqa-H1-QyO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va7-ps-8es">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="44" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va7-ps-8es">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="44"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -94,7 +94,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Co7-fA-N5J">
                                         <rect key="frame" x="8" y="156.5" width="544" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JD-9z-U59">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JD-9z-U59">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -103,7 +103,7 @@
                                                     <action selector="changeSign" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Iv-VK-eJn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwT-7w-Gz5">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwT-7w-Gz5">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -112,12 +112,12 @@
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PEb-em-MRQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-xa-PGM">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-xa-PGM">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOn-gn-wqF">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOn-gn-wqF">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -126,7 +126,7 @@
                                                     <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hOE-59-MlJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kms-7s-Z4D">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kms-7s-Z4D">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -141,7 +141,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-10-bSs">
                                         <rect key="frame" x="8" y="247.5" width="544" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-so-WR4">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-so-WR4">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -150,7 +150,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Es-BZ-dwZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHS-6A-jaq">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHS-6A-jaq">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -159,7 +159,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAp-7h-JLV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYV-l8-jgA">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYV-l8-jgA">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -168,7 +168,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1l-1U-r4H"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-YN-EHU">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rck-YN-EHU">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -177,7 +177,7 @@
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6m-Ix-lDZ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znA-sM-2jt">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znA-sM-2jt">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
@@ -192,7 +192,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="F8A-m8-Cvk">
                                         <rect key="frame" x="8" y="338.5" width="544" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2k-pe-NgZ">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2k-pe-NgZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -201,7 +201,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfA-Zl-XtE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nht-s8-NQp">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nht-s8-NQp">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -210,7 +210,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ka3-JF-Hkl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-yu-Nkc">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-yu-Nkc">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -219,7 +219,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hCo-dm-TcE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka5-mj-Fuv">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka5-mj-Fuv">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -228,7 +228,7 @@
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Or6-pV-9IL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-MY-RiB">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-MY-RiB">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
@@ -243,7 +243,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GDr-P2-cIw">
                                         <rect key="frame" x="8" y="429" width="544" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-Oh-xLd">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-Oh-xLd">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -252,7 +252,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OwI-eM-S0k"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2I-Xv-85M">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2I-Xv-85M">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -261,7 +261,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhO-90-ixq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALe-ZH-gNm">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALe-ZH-gNm">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -270,7 +270,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQ7-94-TWE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-4e-rmZ">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-4e-rmZ">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -279,7 +279,7 @@
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5r8-Cu-KPe"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9J-gV-Lpk">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9J-gV-Lpk">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -294,7 +294,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="544" placeholderIntrinsicHeight="64" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-x0-k1U">
                                         <rect key="frame" x="8" y="520" width="544" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7I-7L-jGY">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7I-7L-jGY">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -303,7 +303,7 @@
                                                     <action selector="appendDot" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFR-1b-2E3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP4-S3-LgY">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP4-S3-LgY">
                                                 <rect key="frame" x="120" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -312,7 +312,7 @@
                                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Vo-XK-J7t"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-Lz-X3l">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-Lz-X3l">
                                                 <rect key="frame" x="240" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -321,7 +321,7 @@
                                                     <action selector="enter" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOg-Ac-eKa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HX-8S-ixN">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HX-8S-ixN">
                                                 <rect key="frame" x="360" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -330,7 +330,7 @@
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJF-3a-jCK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgW-pC-cpa">
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgW-pC-cpa">
                                                 <rect key="frame" x="480" y="0.0" width="64" height="64"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>

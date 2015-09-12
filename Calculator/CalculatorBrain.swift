@@ -54,7 +54,7 @@ public class CalculatorBrain
         }
         
         addOperation(.BinaryOperation("+", { $0 + $1 }))
-        addOperation(.BinaryOperation("-", { $1 - $0 }))
+        addOperation(.BinaryOperation("−", { $1 - $0 }))
         addOperation(.BinaryOperation("×", { $0 * $1 }))
         addOperation(.BinaryOperation("÷", { $1 / $0 }))
         
