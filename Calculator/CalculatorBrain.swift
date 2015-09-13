@@ -22,8 +22,6 @@ public class CalculatorBrain
     
     public static let EMPTY_RESULT = CalculatorBrain.Result(0, " ")
     
-    public var variablesValues = [String:Double]()
-    
     private enum Operation: CustomStringConvertible {
         case Operand(Double)
         case UnaryOperation(String, (Double) -> Double)
@@ -95,24 +93,27 @@ public class CalculatorBrain
         
     }
     
-    public func pushOperand(value: Double) -> Result {
+    public func pushOperand(value: Double, variables: [String:Double]) -> Result {
         stack.append(.Operand(value))
-        return evaluate()
+        return evaluate(variables)
     }
 
-    public func pushOperand(symbol: String) -> Result {
+    public func pushOperand(symbol: String, variables: [String:Double]) -> Result {
         stack.append(.Variable(symbol))
-        return evaluate()
+        return evaluate(variables)
     }
 
-    public func performOperation(symbol: String) -> Result {
+    public func performOperation(symbol: String, variables: [String:Double]) -> Result {
         if let operation = CalculatorBrain.knownOperations[symbol] {
             stack.append(operation)
         }
-        return evaluate()
+        return evaluate(variables)
     }
     
-    private func evaluate(var position: Int) -> (Int, Double?) {
+    private func evaluate(
+        var position: Int,
+        let variables: [String:Double]
+    ) -> (Int, Double?) {
         if position < 0  || position > stack.count {
             return (position, nil)
         }
@@ -124,7 +125,7 @@ public class CalculatorBrain
             return (position, value)
             
         case .UnaryOperation(_, let calculation):
-            let (postion, value) = evaluate(position)
+            let (postion, value) = evaluate(position, variables: variables)
             if let value = value {
                 return (postion, calculation(value))
             } else {
@@ -132,9 +133,9 @@ public class CalculatorBrain
             }
             
         case .BinaryOperation(_, let calculation):
-            let (position, left) = evaluate(position)
+            let (position, left) = evaluate(position, variables: variables)
             if let left = left {
-                let (position, right) = evaluate(position)
+                let (position, right) = evaluate(position, variables: variables)
                 if let right = right {
                     return (position, calculation(left, right))
                 } else {
@@ -148,7 +149,7 @@ public class CalculatorBrain
             return (position, value)
             
         case .Variable(let symbol):
-            return (position, variablesValues[symbol])
+            return (position, variables[symbol])
         }
     }
     
@@ -197,12 +198,27 @@ public class CalculatorBrain
 
         return (bracesCategory, position, description)
     }
+
+    public func evaluate(variables: [String:Double]) -> Result {
+        let value = evaluateValue(variables)
+        let description = evaluateCalculation()
+        print("\(description) = \(value); \(variables)")
+        return Result(value, description)
+    }
     
-    public func evaluate() -> Result {
+    public func evaluateValue(variables: [String:Double]) -> Double? {
         if stack.isEmpty {
-            return CalculatorBrain.EMPTY_RESULT
+            return 0
         }
-        let (_, value) = evaluate(stack.count - 1)
+        let (_, value) = evaluate(stack.count - 1, variables: variables)
+        return value
+    }
+    
+    public func evaluateCalculation() -> String {
+        if stack.isEmpty {
+            return ""
+        }
+        
         var position = stack.count - 1
         var description: String = ""
         repeat {
@@ -215,8 +231,7 @@ public class CalculatorBrain
             }
             
         } while position >= 0
-        print("\(description) = \(value); \(variablesValues)")
-        return Result(value, description)
+        return description
     }
     
     public var toString: String {
@@ -227,14 +242,13 @@ public class CalculatorBrain
     
     public func clean() -> Result {
         stack = []
-        variablesValues = [:]
         return CalculatorBrain.EMPTY_RESULT
     }
     
-    public func stepBack() -> Result {
+    public func stepBack(variables: [String:Double]) -> Result {
         if !stack.isEmpty {
             stack.removeLast()
         }
-        return evaluate()
+        return evaluate(variables)
     }
 }

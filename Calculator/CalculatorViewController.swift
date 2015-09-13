@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
+    var memory = [String:Double]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var displayLabel: UILabel!
-    @IBOutlet weak var calculationsLabel: UILabel!
     
     @IBAction func appendDigit(sender: UIButton) {
         if let textLabel = sender.currentTitle {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 displayText = displayText.substringFromIndex(displayText.startIndex.successor())
             }
         } else {
-            display = brain.performOperation("±")
+            display = brain.performOperation("±", variables: memory)
         }
     }
     
@@ -77,18 +77,18 @@ class ViewController: UIViewController {
                 }
             }
         } else {
-            display = brain.stepBack()
+            display = brain.stepBack(memory)
         }
     }
     
-    @IBAction func setMemory(sender: UIButton) {
-        brain.variablesValues["M"] = displayInDouble
-        display = brain.evaluate()
+    @IBAction func setMemoryValue(sender: UIButton) {
+        memory["M"] = displayInDouble
+        display = brain.evaluate(memory)
         userInMiddleOfTyping = false
     }
     
     @IBAction func addMemory(sender: UIButton) {
-        display = brain.pushOperand("M")
+        display = brain.pushOperand("M", variables: memory)
     }
     
     private var userInMiddleOfTyping: Bool = false
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
                 print = Double.NaN
             }
             displayLabel.text = "\(print)="
-            calculationsLabel.text = value.calculation
+            navigationItem.title = value.calculation
         }
     }
     
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
     
     @IBAction
     private func enter() {
-        display = brain.pushOperand(displayInDouble)
+        display = brain.pushOperand(displayInDouble, variables: memory)
         userInMiddleOfTyping = false
     }
 
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         
         if let operation = sender.currentTitle {
             print("Operation: \(operation)")
-            display = brain.performOperation(operation)
+            display = brain.performOperation(operation, variables: memory)
         }
     }
 }
