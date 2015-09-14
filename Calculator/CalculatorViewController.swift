@@ -152,5 +152,11 @@ class CalculatorViewController: UIViewController {
             display = brain.performOperation(operation, variables: memory)
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "graph" {
+            ((segue.destinationViewController as? UINavigationController)?.visibleViewController as? GraphViewController)?.brain = brain.copyOf()
+        }
+    }
 }
 

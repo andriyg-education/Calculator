@@ -9,23 +9,42 @@
 import UIKit
 
 class GraphViewController: UIViewController {
+    @IBOutlet weak var functionNameLabel: UILabel?
+    
+    private func updateFunctionName() {
+        if let brain = brain {
+            functionNameLabel?.text = "f(M) = \(brain.evaluateCalculation())"
+        } else {
+            functionNameLabel?.text = "f(M) = M"
+        }
+    }
+    
     var brain: CalculatorBrain? {
         didSet {
-            navigationItem.title = brain?.evaluateCalculation()
+            updateFunctionName()
         }
     }
     
     override func viewDidLoad() {
-        navigationItem.title = brain?.evaluateCalculation()
+        updateFunctionName()
+        graphView?.function = function
     }
     
     func function(x: Double) -> Double? {
-        var memory = [String:Double]()
-        memory["M"] = x
-        return brain?.evaluateValue(memory)
+        if let brain = brain {
+            var memory = [String:Double]()
+            memory["M"] = x
+            return brain.evaluateValue(memory)
+        } else {
+            return x
+        }
     }
     
-    @IBOutlet weak var graphView: GraphView?
+    @IBOutlet weak var graphView: GraphView? {
+        didSet {
+            graphView?.function = function
+        }
+    }
     
     @IBAction func pitch(sender: UIPinchGestureRecognizer) {
         print("pitch \(sender.scale * 100)%")

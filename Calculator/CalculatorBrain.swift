@@ -251,4 +251,8 @@ public class CalculatorBrain
         }
         return evaluate(variables)
     }
+    
+    public func copyOf() -> CalculatorBrain {
+        return self
+    }
 }

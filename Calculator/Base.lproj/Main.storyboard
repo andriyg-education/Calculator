@@ -406,9 +406,21 @@
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hDa-n3-6Le" customClass="GraphView" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="21" text="-" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-fA-jqb">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="17"/>
+                                        <color key="textColor" red="0.016701972539999999" green="0.1258224409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gaD-fA-jqb" secondAttribute="trailing" constant="20" symbolic="YES" id="OLm-G3-IbS"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="hv1-gb-ffQ" appends="YES" id="WeM-Iw-wuK"/>
                                     <outletCollection property="gestureRecognizers" destination="9YF-xa-0PK" appends="YES" id="OOi-p4-vby"/>
@@ -418,6 +430,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="gaD-fA-jqb" secondAttribute="leading" id="9AY-nJ-X8F"/>
+                            <constraint firstItem="gaD-fA-jqb" firstAttribute="top" secondItem="0Ts-Fr-IDU" secondAttribute="bottom" id="Dvq-8E-tgq"/>
                             <constraint firstItem="hDa-n3-6Le" firstAttribute="leading" secondItem="1nO-YW-i3T" secondAttribute="leadingMargin" id="dRy-3o-twM"/>
                             <constraint firstItem="hDa-n3-6Le" firstAttribute="top" secondItem="0Ts-Fr-IDU" secondAttribute="bottom" id="je6-Wr-1O3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hDa-n3-6Le" secondAttribute="trailing" id="tBq-C2-ZBd"/>
@@ -426,6 +440,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1M4-6k-4Gj"/>
                     <connections>
+                        <outlet property="functionNameLabel" destination="gaD-fA-jqb" id="omI-0R-09d"/>
                         <outlet property="graphView" destination="hDa-n3-6Le" id="Aud-wd-eKt"/>
                     </connections>
                 </viewController>

@@ -14,12 +14,19 @@ class GraphView: UIView {
     @IBInspectable var color: UIColor = UIColor.blackColor() {
         didSet {
             drawler.color = color
+            graphDrawler.color = color
+            setNeedsDisplay()
         }
     }
     
-    var function: ((CGFloat) -> CGFloat) = { $0 }
+    var function: ((Double) -> Double?) = { $0 } {
+        didSet {
+            graphDrawler.function = function
+        }
+    }
     
     private let drawler: AxesDrawer = AxesDrawer()
+    private let graphDrawler: GraphDrawler = GraphDrawler(function: { $0 })
 
     var graphCenter: CGPoint {
         return CGPoint(x: self.bounds.size.width / 2 + centerOffset.x, y: self.bounds.size.height / 2 + centerOffset.y)
@@ -28,6 +35,7 @@ class GraphView: UIView {
     override func drawRect(rect: CGRect) {
         let pointsPerUnit = min(bounds.size.height, bounds.size.width) / scale
         drawler.drawAxesInRect(bounds, origin: graphCenter, pointsPerUnit: pointsPerUnit)
+        graphDrawler.drawAxesInRect(bounds, origin: graphCenter, pointsPerUnit: pointsPerUnit)
     }
     
     @IBInspectable var centerOffset: CGPoint = CGPoint.zero { didSet { setNeedsDisplay() } }
